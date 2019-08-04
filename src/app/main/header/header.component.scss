@@ -3,7 +3,6 @@
 }
 
 .header {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     display: flex;
     height: 60px;
 }
@@ -12,23 +11,20 @@
 .second-tab,
 .third-tab {
     cursor: pointer;
+    border-radius: 8px;
     font-size: 14px;
     color: black;
     border: none;
-    border-right: 1px solid rgba(0, 0, 0, 0.5);
     background: none;
     outline: none;
     padding: 0 16px;
 
     &:hover {
         opacity: 0.5;
+        background-color: rgba(185, 180, 183, 0.73);
     }
 
     &.active {
         color: red;
     }
-}
-
-.first-tab {
-    border-left: 1px solid rgba(0, 0, 0, 0.5);
 }
