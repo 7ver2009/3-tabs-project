@@ -21,4 +21,8 @@ export class SecondTabComponent {
   ) {
     this.data = this.activatedRoute.snapshot.data.mockData as ReadonlyArray<Readonly<TabsItemModel>>;
   }
+
+  public trackById(_index: number, item: Readonly<TabsItemModel>): number {
+    return item.id;
+  }
 }
