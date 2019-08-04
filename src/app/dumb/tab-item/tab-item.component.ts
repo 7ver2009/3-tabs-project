@@ -1,11 +1,13 @@
 import { 
   Component,
   Input,
+  ChangeDetectionStrategy,
 } from '@angular/core';
 
 import { TabsItemModel } from '../../api';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'tt-tab-item',
   templateUrl: './tab-item.component.html',
   styleUrls: ['./tab-item.component.scss']

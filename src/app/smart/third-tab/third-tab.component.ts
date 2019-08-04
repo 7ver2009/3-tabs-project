@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { 
+  Component,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { TabsItemModel } from '../../api';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'tt-third-tab',
   templateUrl: './third-tab.component.html',
   styleUrls: ['./third-tab.component.scss']

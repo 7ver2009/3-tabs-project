@@ -23,11 +23,6 @@ import {
     HttpClientModule,
     ModalModule,
   ],
-  providers: [
-    FirstTabDataResolver,
-    SecondTabDataResolver,
-    ThirdTabDataResolver,
-  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

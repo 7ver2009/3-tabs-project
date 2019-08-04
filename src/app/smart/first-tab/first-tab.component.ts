@@ -1,9 +1,13 @@
-import { Component } from '@angular/core';
+import { 
+  Component,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { TabsItemModel } from '../../api';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'tt-first-tab',
   templateUrl: './first-tab.component.html',
   styleUrls: ['./first-tab.component.scss']

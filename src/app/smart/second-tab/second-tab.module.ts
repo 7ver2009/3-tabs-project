@@ -7,7 +7,7 @@ import { DumbModule } from '../../dumb';
 
 const DECLARATIONS = [
   SecondTabComponent
-]
+];
 
 @NgModule({
   declarations: DECLARATIONS,

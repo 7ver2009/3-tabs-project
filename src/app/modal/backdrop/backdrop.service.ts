@@ -11,6 +11,7 @@ import {
 export class BackdropService {
 
     public backdropModal$: Observable<boolean>;
+
     private readonly backdropModalSource = new Subject<boolean>();
 
     constructor() {

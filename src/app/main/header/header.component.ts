@@ -1,8 +1,12 @@
-import { Component } from '@angular/core';
+import { 
+  Component,
+  ChangeDetectionStrategy,
+} from '@angular/core';
 
 import { UrlTree } from '../../app-routing.config';
 
 @Component({
+  changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'tt-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
