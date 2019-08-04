@@ -1,0 +1,25 @@
+.backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;    
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.spinner {
+    animation: rotate 1.5s infinite alternate ease-in-out;
+    border-bottom: 4px solid red;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(1080deg)
+    }    
+}

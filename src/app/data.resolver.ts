@@ -1,7 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
+import {
+    delay,
+    tap,
+} from 'rxjs/operators';
 
+import { BackdropService } from './modal';
 import {
     TabsItemModel,
     MockService,
@@ -13,10 +18,17 @@ import {
 export class FirstTabDataResolver implements Resolve<Observable<TabsItemModel>> {
     constructor(
         private readonly mockService: MockService,
+        private readonly backdropService: BackdropService,
     ) { }
 
     public resolve(): Observable<TabsItemModel> {
-        return this.mockService.getFirstTabObject();
+        this.backdropService.showModal();
+
+        return this.mockService.getFirstTabObject()
+            .pipe(
+                delay(3000),
+                tap(() => this.backdropService.hideModal()),
+            );
     }
 }
 
@@ -26,10 +38,17 @@ export class FirstTabDataResolver implements Resolve<Observable<TabsItemModel>> 
 export class SecondTabDataResolver implements Resolve<Observable<TabsItemModel>> {
     constructor(
         private readonly mockService: MockService,
+        private readonly backdropService: BackdropService,
     ) { }
 
     public resolve(): Observable<TabsItemModel> {
-        return this.mockService.getSecondTabObject();
+        this.backdropService.showModal();
+
+        return this.mockService.getSecondTabObject()
+            .pipe(
+                delay(3000),
+                tap(() => this.backdropService.hideModal()),
+            );
     }
 }
 
@@ -39,9 +58,15 @@ export class SecondTabDataResolver implements Resolve<Observable<TabsItemModel>>
 export class ThirdTabDataResolver implements Resolve<Observable<TabsItemModel>> {
     constructor(
         private readonly mockService: MockService,
+        private readonly backdropService: BackdropService,
     ) { }
-
     public resolve(): Observable<TabsItemModel> {
-        return this.mockService.getThirdTabObject();
+        this.backdropService.showModal();
+
+        return this.mockService.getThirdTabObject()
+            .pipe(
+                delay(3000),
+                tap(() => this.backdropService.hideModal()),
+            );
     }
 }

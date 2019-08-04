@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { TabsItemModel } from '../../api';
 
 @Component({
   selector: 'tt-third-tab',
@@ -6,4 +9,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./third-tab.component.scss']
 })
 export class ThirdTabComponent {
+
+  public readonly data?: ReadonlyArray<Readonly<TabsItemModel>>;
+
+  constructor(
+    private readonly activatedRoute: ActivatedRoute,
+  ) {
+    this.data = this.activatedRoute.snapshot.data.mockData as ReadonlyArray<Readonly<TabsItemModel>>;
+  }
 }

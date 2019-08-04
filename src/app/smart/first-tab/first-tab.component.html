@@ -1,1 +1,6 @@
-<span>First</span>
+<div class="tab-wrapper">
+    <div *ngFor="let item of data; trackBy: trackById"
+         class="tab-item">
+        <tt-tab-item [item]="item"></tt-tab-item>
+    </div>
+</div>
