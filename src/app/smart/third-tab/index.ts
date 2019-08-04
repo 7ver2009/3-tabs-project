@@ -1,0 +1,1 @@
+export * from './third-tab.module';
